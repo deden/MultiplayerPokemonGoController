@@ -14,7 +14,6 @@ class ViewController: UIViewController, MKMapViewDelegate, PlayerDelegate, UIPop
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var mapTypeSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var autoMoveSwitch: UISwitch!
     @IBOutlet weak var selectPlayerButton: UIButton!
     
     var mapCenterCoordinate:CLLocationCoordinate2D!
@@ -154,8 +153,8 @@ class ViewController: UIViewController, MKMapViewDelegate, PlayerDelegate, UIPop
                         self.currentPlayer?.jumpToLocation(flag.coordinate)
                     }))
                     
-                    alert.addAction(UIAlertAction(title: "Add Near By marker", style: .Default, handler: { (action: UIAlertAction!) in
-                        self.createNearByCircle(flag.coordinate)
+                    alert.addAction(UIAlertAction(title: "Add Nearby marker", style: .Default, handler: { (action: UIAlertAction!) in
+                        self.createNearbyCircle(flag.coordinate)
                         mapView.removeAnnotation(view.annotation!)
                     }))
                 }
@@ -243,13 +242,13 @@ class ViewController: UIViewController, MKMapViewDelegate, PlayerDelegate, UIPop
         
     }
     
-    func createNearByCircle (coord:CLLocationCoordinate2D) {
+    func createNearbyCircle (coord:CLLocationCoordinate2D) {
         let circle:MKCircle = MKCircle(centerCoordinate: mapCenterCoordinate, radius: 1000)
         nearbyCircles.append(circle)
         self.mapView.addOverlay(circle)
     }
     
-    @IBAction func removeNearByCircles () {
+    @IBAction func removeNearbyCircles () {
         mapView.removeOverlays(nearbyCircles)
     }
     

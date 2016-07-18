@@ -47,12 +47,6 @@
                                     <constraint firstAttribute="width" secondItem="ytL-hr-ch1" secondAttribute="height" multiplier="1:1" id="yuG-1R-3xU"/>
                                 </constraints>
                             </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMW-zP-BUQ">
-                                <rect key="frame" x="531" y="549" width="51" height="31"/>
-                                <connections>
-                                    <action selector="disableAutoMove:" destination="vMl-ac-X9N" eventType="valueChanged" id="o4P-2b-ePb"/>
-                                </connections>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7z-KQ-q6E">
                                 <rect key="frame" x="550" y="56" width="50" height="50"/>
                                 <state key="normal" backgroundImage="cplus"/>
@@ -75,10 +69,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKr-4O-LSa">
-                                <rect key="frame" x="263" y="562" width="142" height="30"/>
-                                <state key="normal" title="Clear Near by circles"/>
+                                <rect key="frame" x="265" y="562" width="138" height="30"/>
+                                <state key="normal" title="Clear Nearby circles"/>
                                 <connections>
-                                    <action selector="removeNearByCircles" destination="vMl-ac-X9N" eventType="touchUpInside" id="BZX-kX-pzz"/>
+                                    <action selector="removeNearbyCircles" destination="vMl-ac-X9N" eventType="touchUpInside" id="B05-dL-ljE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -92,9 +86,7 @@
                             <constraint firstItem="AgL-46-PTD" firstAttribute="leading" secondItem="xIg-F9-XVV" secondAttribute="trailing" constant="36" id="Rbr-bL-sOZ"/>
                             <constraint firstItem="Wd2-iQ-5ak" firstAttribute="top" secondItem="NKr-4O-LSa" secondAttribute="bottom" constant="8" id="Tps-Tf-VHs"/>
                             <constraint firstItem="Gcx-u1-Dtu" firstAttribute="top" secondItem="SLw-FT-xXm" secondAttribute="bottom" id="ePr-Gd-WJg"/>
-                            <constraint firstItem="Wd2-iQ-5ak" firstAttribute="top" secondItem="gMW-zP-BUQ" secondAttribute="bottom" constant="20" id="eUv-1V-MXY"/>
                             <constraint firstItem="Wd2-iQ-5ak" firstAttribute="top" secondItem="AgL-46-PTD" secondAttribute="bottom" constant="8" id="jcp-gk-C9O"/>
-                            <constraint firstItem="gMW-zP-BUQ" firstAttribute="trailing" secondItem="eHH-c5-1mX" secondAttribute="trailingMargin" id="nQN-54-XrX"/>
                             <constraint firstItem="NKr-4O-LSa" firstAttribute="leading" secondItem="AgL-46-PTD" secondAttribute="trailing" constant="27" id="qH0-kB-xID"/>
                             <constraint firstItem="ytL-hr-ch1" firstAttribute="centerY" secondItem="97z-Wl-WHx" secondAttribute="centerY" id="rBG-ol-EL0"/>
                             <constraint firstAttribute="trailing" secondItem="97z-Wl-WHx" secondAttribute="trailing" id="sWo-DO-85e"/>
@@ -105,7 +97,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="autoMoveSwitch" destination="gMW-zP-BUQ" id="qWJ-QV-GMV"/>
                         <outlet property="mapTypeSegmentedControl" destination="Gcx-u1-Dtu" id="yfg-CK-BVn"/>
                         <outlet property="mapView" destination="97z-Wl-WHx" id="1ZA-KN-qIC"/>
                         <outlet property="selectPlayerButton" destination="xIg-F9-XVV" id="Iot-Yl-cZZ"/>
