@@ -2,7 +2,7 @@
 
 Build this project with Xcode and run on your devices. Until now, the project support up to 2 players. Additional players is possible with few update in configuration.
 
-Using one iOS device as controller, you can control 2 devices. By using multiple player it should be easier to detect and catch Pokemons with specific teamwork method (i.e Triangulation Interception). You can add map overlays as near by marker.
+Using one iOS device as controller, you can control 2 devices. By using multiple player it should be easier to detect and catch Pokemons with specific teamwork method (i.e Triangulation Interception). You can add map overlays as nearby marker.
 
 ![Alt text](Resources/power-circle.jpg?raw=true "result gif")
 ![Alt text](Resources/IMG_2569.PNG?raw=true "IMG_2569.PNG")  

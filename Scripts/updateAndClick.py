@@ -18,11 +18,12 @@ def getPokemonLocation():
 
 def clickAction():
     if os.path.isfile("click.applescript"):
-				os.system("osascript click.applescript > /dev/null 2>&1")
+				os.system("osascript singleplayer.applescript > /dev/null 2>&1")
 
 def generateXMLs():
 	global lastPos
 	folders = ["player1", "player2"]
+	needUpdated = False
 	geo = getPokemonLocation()
 	if geo != None:
 		if len(geo):
@@ -36,13 +37,19 @@ def generateXMLs():
 					wpt = ET.SubElement(gpx, "wpt", lat=pos["lat"], lon=pos["lng"])
 					ET.SubElement(wpt, "name").text = "PokemonLocation"
 					ET.ElementTree(gpx).write("".join((folders[i], "/pokemonLocation.gpx")))
+					needUpdated = True
 					print "Location ", i, "Updated!", "latitude:", pos["lat"], "longitude:" ,pos["lng"]
-			lastPos = newPos
-			clickAction()
+				else:
+					print "Not changed"
+
+			if needUpdated:
+				lastPos = newPos
+				clickAction()
+
 
 def start():
 	while True:
 		generateXMLs()
-		time.sleep(0.5)
+		time.sleep(1)
 
 start()
