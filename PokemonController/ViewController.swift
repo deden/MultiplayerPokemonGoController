@@ -84,6 +84,7 @@ class ViewController: UIViewController, MKMapViewDelegate, PlayerDelegate, UIPop
             if #available(iOS 9.0, *) {
                 if let url = portal.photoURL {
                     let imageView = UIImageView()
+                    imageView.frame = CGRectMake(0, 0, 50, 50);
                     imageView.imageFromUrl(url)
                     view.detailCalloutAccessoryView = imageView
                 }
@@ -380,13 +381,25 @@ class ViewController: UIViewController, MKMapViewDelegate, PlayerDelegate, UIPop
     func loadCSV() {
         do {
             let csvURL = NSBundle(forClass: ViewController.self).URLForResource("sampit_portals", withExtension: "csv")!
-            let csv = try CSV(url: csvURL)
+            let contents = try String(contentsOfURL: csvURL, encoding: NSUTF8StringEncoding)
+            let csv = CSwiftV(string: contents)
+            let keyedRows = csv.keyedRows!
             
+            for dict in keyedRows {
+                if let portal = Portal.fromCSV(dict) {
+                    self.portals.append(portal)
+                }
+            }
+            
+            //let csv = try CSV(url: csvURL)
+            
+            /*
             csv.enumerateAsDict { dict in
                 if let portal = Portal.fromCSV(dict) {
                     self.portals.append(portal)
                 }                
             }
+            */
         } catch {
             // Catch errors or something
         }

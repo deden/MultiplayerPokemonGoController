@@ -27,14 +27,25 @@ class Portal: NSObject, MKAnnotation {
     }
     
     class func fromCSV(dict: [String:String]) -> Portal? {
-        let lazyMapCollection = dict.values
-        let stringArray = Array(lazyMapCollection)
+        let stringArray = Array(dict)
+        var title, imgurl, otherText: String!
+        var lon, lat:Double!
         
-        let title = stringArray[3]
-        let imgurl = stringArray[4]
-        let otherText = stringArray[0]
-        let c = CLLocationCoordinate2D(latitude: Double(stringArray[2])!, longitude: Double(stringArray[1])!)
+        for a in stringArray {
+            if a.0 == "other" {
+                otherText = a.1
+            } else if a.0 == "name" {
+                title = a.1
+            } else if a.0 == "imgurl" {
+                imgurl = a.1
+            } else if a.0 == "lon" {
+                lon = Double(a.1)!
+            } else if a.0 == "lat" {
+                lat = Double(a.1)!
+            }
+        }
         
+        let c = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         return Portal(title: title, photoURL: imgurl, otherString: otherText, coordinate: c)
     }
     
