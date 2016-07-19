@@ -4,15 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CCHMapClusterController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GCDWebServer.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-PokemonController.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -22,7 +27,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E4C45EFA7D33B6E5B9193BDCF4320E40</key>
+		<key>89AD13529F3D133F1B9548298D3EE89E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE431AB5BC71030AF5F6D4099C7DB1C6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

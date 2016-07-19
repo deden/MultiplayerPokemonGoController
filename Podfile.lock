@@ -1,14 +1,17 @@
 PODS:
-  - GCDWebServer (3.3.2):
-    - GCDWebServer/Core (= 3.3.2)
-  - GCDWebServer/Core (3.3.2)
+  - CCHMapClusterController (1.7.0)
+  - GCDWebServer (3.3.3):
+    - GCDWebServer/Core (= 3.3.3)
+  - GCDWebServer/Core (3.3.3)
 
 DEPENDENCIES:
+  - CCHMapClusterController
   - GCDWebServer
 
 SPEC CHECKSUMS:
-  GCDWebServer: 2a375ec42839a41d7187d04e5b688d32fa5c4cd5
+  CCHMapClusterController: d8cd12cd5682ec6cd76d911ac7198f981b6cc1b8
+  GCDWebServer: 1c39a1f0763e4eb492bee021e4270fce097d3555
 
-PODFILE CHECKSUM: 38b2228a45b9b61aee2f2f7dbbafcf4c2c15eff3
+PODFILE CHECKSUM: 5fada1c7c968a064ce4f210f243c6bfcd4d4ae07
 
-COCOAPODS: 1.0.0.beta.8
+COCOAPODS: 1.0.1

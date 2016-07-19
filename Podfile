@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'PokemonController' do
 	pod 'GCDWebServer'
+	pod "CCHMapClusterController"
 end
 

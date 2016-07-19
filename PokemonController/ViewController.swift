@@ -380,7 +380,7 @@ class ViewController: UIViewController, MKMapViewDelegate, PlayerDelegate, UIPop
     //MARK: CSVLoader
     func loadCSV() {
         do {
-            let csvURL = NSBundle(forClass: ViewController.self).URLForResource("sampit_portals", withExtension: "csv")!
+            let csvURL = NSBundle(forClass: ViewController.self).URLForResource("bogor3", withExtension: "csv")!
             let contents = try String(contentsOfURL: csvURL, encoding: NSUTF8StringEncoding)
             let csv = CSwiftV(string: contents)
             let keyedRows = csv.keyedRows!
